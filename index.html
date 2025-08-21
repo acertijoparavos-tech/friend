@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>Acertijo de la Justicia</title>
+  <title>Acertijo</title>
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -70,10 +70,10 @@
   <div class="container">
     <h2>Acertijo</h2>
     <p>
-      “No tengo ojos y peso con balanza,<br>
+      â€œNo tengo ojos y peso con balanza,<br>
       mi espada corta sin miedo ni alianza.<br>
       Busco la verdad, no la venganza,<br>
-      ¿quién soy?”
+      Â¿quiÃ©n soy?â€
     </p>
     <input type="password" id="password" placeholder="Escribe la respuesta">
     <br>
@@ -85,16 +85,19 @@
     function checkPassword() {
       const pass = document.getElementById("password").value.trim().toUpperCase();
       const message = document.getElementById("message");
-      
-      if (pass === "JUSTICIA") {
-        message.innerHTML = `¡Correcto!<br>
-        Llegaste hasta acá, ingresa al siguiente link:<br>
+
+      const encoded = "SlVTVElDSUE=";
+      const decoded = atob(encoded);
+
+      if (pass === decoded) {
+        message.innerHTML = `Â¡Correcto!<br>
+        Llegaste hasta acÃ¡, ingresa al siguiente link:<br>
         <a href="https://www.youtube.com/shorts/vauinxeCSKU" target="_blank">
           https://www.youtube.com/shorts/vauinxeCSKU
         </a><br>
-        <span class="hint">Presta atención al video... puede que oculte algo más.</span>`;
+        <span class="hint">Presta atenciÃ³n al video... puede que oculte algo mÃ¡s.</span>`;
       } else {
-        message.textContent = "Contraseña incorrecta. Inténtalo de nuevo.";
+        message.textContent = "ContraseÃ±a incorrecta. IntÃ©ntalo de nuevo.";
       }
     }
   </script>
